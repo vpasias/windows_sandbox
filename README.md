@@ -1,1 +1,1 @@
-# windows_sandbox
+Windows cluster sandbox with Vagrant
