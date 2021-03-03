@@ -1,0 +1,37 @@
+chmod +x cloudlab-setup-ubuntu-tl.sh && ./cloudlab-setup-ubuntu-tl.sh && \
+sudo apt-get install libvirt-bin genisoimage libguestfs-tools libosinfo-bin virtinst qemu-kvm git vim net-tools wget curl bash-completion python-pip libvirt-daemon-system virt-manager bridge-utils libnss-libvirt libvirt-clients osinfo-db-tools intltool sshpass -y && \
+sudo sed -i 's/hosts:          files dns/hosts:          files libvirt libvirt_guest dns/' /etc/nsswitch.conf && sudo lsmod | grep kvm && sudo reboot
+#sudo systemctl restart libvirtd && sudo systemctl status libvirtd
+
+screen
+# Press Return to continue
+# detach from session without killing it: Ctrl a d 
+# to see screen sessions: screen -ls
+# detach from closed session: screen -d -r 2035.pts-0.node0
+# enter session: screen -r 2035.pts-0.node0
+# exit a session and terminate it: exit
+
+sudo -i
+
+# Create OS node VMs
+mkdir -p /mnt/extra/ws && cd /mnt/extra/ws
+
+curl -fsSL http://bit.ly/initVagrant | PROVIDER=virtualbox bash
+vagrant -v && vboxmanage -V
+vboxmanage setproperty machinefolder /mnt/extra/libvirt/ && vboxmanage list systemproperties | grep folder
+
+########################################################################################################################################################################
+# Deploying a Windows sandbox using Vagrant and Powershell DSC (https://igorsmolin.ru/en/2020/02/15/deploy-an-automating-windows-sandbox-using-vagrant-and-powershell-dsc-part-1-ad/ ####################
+########################################################################################################################################################################
+
+git clone https://github.com/vpasias/windows_sandbox.git && cd windows_sandbox
+
+vagrant up
+
+vagrant status
+
+########################################################################################################################################################################
+#################### Delete ##########################################################################################
+########################################################################################################################################################################
+
+vagrant destroy -f && vagrant status && vagrant global-status
