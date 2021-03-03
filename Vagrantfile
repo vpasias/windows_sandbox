@@ -6,7 +6,11 @@ Vagrant.configure("2") do |config|
     subconfig.vm.box = "gusztavvargadr/windows-server"
     subconfig.vm.hostname = "dc1"
     subconfig.vm.provider :virtualbox do |vb|
-      vb.gui = true
+      vb.gui = false
+      vb.memory = 16*1024
+      vb.cpus = 4
+      vb.customize ['modifyvm', :id, '--nested-hw-virt', 'on']
+      vb.customize ['modifyvm', :id, '--nicpromisc2', 'allow-all']
     end
     subconfig.vm.network "private_network", ip: "192.168.11.2", 
       virtualbox__intnet: true
@@ -32,6 +36,10 @@ Vagrant.configure("2") do |config|
     subconfig.vm.hostname = "cs1"
     subconfig.vm.provider :virtualbox do |vb|
       vb.gui = false
+      vb.memory = 16*1024
+      vb.cpus = 4
+      vb.customize ['modifyvm', :id, '--nested-hw-virt', 'on']
+      vb.customize ['modifyvm', :id, '--nicpromisc2', 'allow-all']
     end
     subconfig.vm.network "private_network", ip: "127.0.0.2", 
       auto_config: false,
@@ -53,6 +61,10 @@ Vagrant.configure("2") do |config|
     subconfig.vm.hostname = "cs2"
     subconfig.vm.provider :virtualbox do |vb|
       vb.gui = false
+      vb.memory = 16*1024
+      vb.cpus = 4
+      vb.customize ['modifyvm', :id, '--nested-hw-virt', 'on']
+      vb.customize ['modifyvm', :id, '--nicpromisc2', 'allow-all']
     end
     subconfig.vm.network "private_network", ip: "127.0.0.3", 
       auto_config: false,
@@ -74,6 +86,10 @@ Vagrant.configure("2") do |config|
     subconfig.vm.hostname = "cs3"
     subconfig.vm.provider :virtualbox do |vb|
       vb.gui = false
+      vb.memory = 16*1024
+      vb.cpus = 4
+      vb.customize ['modifyvm', :id, '--nested-hw-virt', 'on']
+      vb.customize ['modifyvm', :id, '--nicpromisc2', 'allow-all']
     end
     subconfig.vm.network "private_network", ip: "127.0.0.4", 
       auto_config: false,
@@ -95,6 +111,10 @@ Vagrant.configure("2") do |config|
     subconfig.vm.hostname = "ss1"
     subconfig.vm.provider :virtualbox do |vb|
       vb.gui = false
+      vb.memory = 16*1024
+      vb.cpus = 4
+      vb.customize ['modifyvm', :id, '--nested-hw-virt', 'on']
+      vb.customize ['modifyvm', :id, '--nicpromisc2', 'allow-all']
     end
     subconfig.vm.network "private_network", ip: "127.0.0.5", 
       auto_config: false,
