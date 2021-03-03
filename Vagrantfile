@@ -8,7 +8,7 @@ Vagrant.configure("2") do |config|
     subconfig.vm.provider :virtualbox do |vb|
       vb.gui = true
     end
-    subconfig.vm.network "private_network", ip: "10.0.0.100", 
+    subconfig.vm.network "private_network", ip: "192.168.11.2", 
       virtualbox__intnet: true
     subconfig.winrm.username = "vagrant"
     subconfig.winrm.password = "vagrant"
