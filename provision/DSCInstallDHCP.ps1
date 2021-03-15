@@ -21,6 +21,7 @@ Configuration xDhcpsServerScope_NewScope
             Ensure = 'Present'
             DnsName = $env:COMPUTERNAME + '.vipnet.local'
             IPAddress = $IP
+            IsSingleInstance = 'Yes'
         }       
                   
         
