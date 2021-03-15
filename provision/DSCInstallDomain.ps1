@@ -27,7 +27,7 @@ Configuration ADDomain_NewForest_Config
             Ensure = 'Present'
         }
         
-        ADDomain 'party.hard'
+        ADDomain 'vipnet.local'
         {
             DomainName                    = 'vipnet.local'
             Credential                    = $Credential
