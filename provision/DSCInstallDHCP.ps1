@@ -42,7 +42,7 @@ Configuration xDhcpsServerScope_NewScope
         
         xDhcpServerOptionDefinition Option
         {
-            OptionID = '1'
+            OptionID = '192.168.11.0'
             VendorClass = ''
             Name = 'Option1'
             Type = 'IPv4Address'
