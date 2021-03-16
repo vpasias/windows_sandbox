@@ -13,7 +13,7 @@ Configuration JoinDomainConfiguration
         Computer JoinDomain
         {
             Name       = $env:COMPUTERNAME
-            DomainName = 'vipnet'
+            DomainName = 'VIPNET'
             Credential = $Credential # Credential to join to domain
         }
     }
