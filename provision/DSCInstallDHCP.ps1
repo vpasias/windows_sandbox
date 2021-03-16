@@ -22,12 +22,13 @@ Configuration xDhcpsServerScope_NewScope
             Ensure = 'Present'
             DnsName = $env:COMPUTERNAME + '.vipnet.local'
             IPAddress = $IP
-            IsSingleInstance = 'Yes'
+#            IsSingleInstance = 'Yes'
         }       
                   
         
         xDhcpServerScope Scope
         {
+            ScopeID = '192.168.11.0'
             ScopeId = '192.168.11.0'
             Ensure = 'Present'
             IPEndRange = '192.168.11.254'
@@ -36,17 +37,19 @@ Configuration xDhcpsServerScope_NewScope
             SubnetMask = '255.255.255.0'
             LeaseDuration = ((New-TimeSpan -Hours 8 ).ToString())
             State = 'Active'
-            AddressFamily = 'IPv4'
+#            AddressFamily = 'IPv4'
         }     
         
-        xDhcpServerOption Option
+        xDhcpServerOptionDefinition Option
         {
+            OptionID = '1'
+            VendorClass = ''
+            Name = 'Option1'
+            Type = 'IPv4Address'
             Ensure = 'Present'
-            ScopeID = '192.168.11.0'
-            DnsDomain = 'vipnet.local'
-            DnsServerIPAddress = '192.168.11.2'
+            MultiValued = 'Yes'
+            Description = 'Option1'
             AddressFamily = 'IPv4'
-            Router = '192.168.11.1'
         }
     }
 }
