@@ -46,7 +46,7 @@ Configuration xDhcpsServerScope_NewScope
             Name = 'Option1'
             Type = 'IPv4Address'
             Ensure = 'Present'
-            MultiValued = 'Yes'
+            MultiValued = '$True'
             Description = 'Option1'
             AddressFamily = 'IPv4'
         }
