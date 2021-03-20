@@ -24,6 +24,10 @@ vboxmanage setproperty machinefolder /mnt/extra/libvirt/ && vboxmanage list syst
 # Deploying a Windows sandbox using Vagrant and Powershell DSC (https://igorsmolin.ru/en/2020/02/15/deploy-an-automating-windows-sandbox-using-vagrant-and-powershell-dsc-part-1-ad/ ####################
 ########################################################################################################################################################################
 
+su - iason
+
+sudo adduser `id -un` vboxusers
+
 git clone https://github.com/vpasias/windows_sandbox.git && cd windows_sandbox
 
 vagrant up
