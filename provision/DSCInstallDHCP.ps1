@@ -22,14 +22,13 @@ Configuration xDhcpsServerScope_NewScope
             Ensure = 'Present'
             DnsName = $env:COMPUTERNAME + '.vipnet.local'
             IPAddress = $IP
-#            IsSingleInstance = 'Yes'
+            IsSingleInstance = 'Yes'
         }       
                   
         
         xDhcpServerScope Scope
         {
             ScopeID = '192.168.11.0'
-            ScopeId = '192.168.11.0'
             Ensure = 'Present'
             IPEndRange = '192.168.11.254'
             IPStartRange = '192.168.11.10'
