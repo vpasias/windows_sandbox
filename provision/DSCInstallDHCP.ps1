@@ -39,17 +39,6 @@ Configuration xDhcpsServerScope_NewScope
 #            AddressFamily = 'IPv4'
         }     
         
-        xDhcpServerOptionDefinition Option
-        {
-            OptionID = '192.168.11.0'
-            VendorClass = ''
-            Name = 'Option1'
-            Type = 'IPv4Address'
-            Ensure = 'Present'
-            MultiValued = '$true'
-            Description = 'Option1'
-            AddressFamily = 'IPv4'
-        }
     }
 }
 xDhcpsServerScope_NewScope
