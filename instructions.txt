@@ -108,7 +108,7 @@ Format-Volume -DriveLetter F -FileSystem NTFS -Force
 
 Test-Cluster -Node "CS1", "CS2", "CS3"
 
-New-Cluster -Name Cluster01 -Node "CS1", "CS2", "CS3" -AdministrativeAccessPoint ActiveDirectoryAndDns -StaticAddress 192.168.11.111
+New-Cluster -Name Cluster01 -Node "CS1", "CS2", "CS3" -AdministrativeAccessPoint ActiveDirectoryAndDns -StaticAddress 192.168.11.5
 
 
 ########################################################################################################################################################################
