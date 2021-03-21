@@ -105,6 +105,7 @@ Format-Volume -DriveLetter F -FileSystem NTFS -Force
 ### Configure Cluster
 # On CS1 PowerShell window
 # https://www.server-world.info/en/note?os=Windows_Server_2019&p=wsfc&f=4
+# Remove Default Gateway: 10.0.2.2 - Add Default Gateway: 192.168.11.2
 
 Test-Cluster -Node "CS1", "CS2", "CS3"
 
