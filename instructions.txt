@@ -30,7 +30,10 @@ sudo adduser `id -un` vboxusers
 
 git clone https://github.com/vpasias/windows_sandbox.git && cd windows_sandbox
 
-vagrant up dc1
+vagrant up
+
+# vagrant up dc1
+# vagrant up cs1 cs2 cs3 ss1
 
 # 3389 -> localhost:33389
 # URL: localhost:3389
@@ -45,7 +48,31 @@ vagrant up dc1
 
 vagrant status
 
-vagrant up cs1 cs2 cs3 ss1
+# On CS1/CS2/CS3 PowerShell window
+# https://www.server-world.info/en/note?os=Windows_Server_2019&p=wsfc&f=1
+Install-WindowsFeature Failover-Clustering -IncludeManagementTools
+Restart-Computer -Force
+
+# On SS1 PowerShell window
+# https://www.server-world.info/en/note?os=Windows_Server_2019&p=wsfc&f=2
+# https://www.server-world.info/en/note?os=Windows_Server_2019&p=iscsi&f=1
+Install-WindowsFeature FS-iSCSITarget-Server -IncludeManagementTools
+Restart-Computer -Force
+
+New-IscsiServerTarget -TargetName "iSCSITarget01" -InitiatorId @("IPAddress:192.168.11.10","IPAddress:192.168.11.11","IPAddress:192.168.11.12")
+New-IscsiVirtualDisk -Path "C:\iSCSIDisk\Quorum01.vhdx" -SizeBytes 512MB
+New-IscsiVirtualDisk -Path "C:\iSCSIDisk\Disk01.vhdx" -SizeBytes 30GB
+
+Add-IscsiVirtualDiskTargetMapping -TargetName "iSCSITarget01" -Path "C:\iSCSIDisk\Quorum01.vhdx"
+Add-IscsiVirtualDiskTargetMapping -TargetName "iSCSITarget01" -Path "C:\iSCSIDisk\Disk01.vhdx"
+
+Set-IscsiServerTarget `
+-TargetName "iSCSITarget01" `
+-EnableChap $True `
+-Chap (New-Object PSCredential("username", (ConvertTo-SecureString -AsPlainText "UserP@ssw0rd01" -Force)))`
+-PassThru
+
+
 
 ########################################################################################################################################################################
 #################### Delete ##########################################################################################
