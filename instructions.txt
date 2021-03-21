@@ -32,8 +32,8 @@ git clone https://github.com/vpasias/windows_sandbox.git && cd windows_sandbox
 
 vagrant up dc1
 
-# 33389 -> localhost:33389
-# URL: localhost:33389
+# 3389 -> localhost:33389
+# URL: localhost:3389
 
 vagrant status
 
