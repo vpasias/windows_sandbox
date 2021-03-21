@@ -30,9 +30,11 @@ sudo adduser `id -un` vboxusers
 
 git clone https://github.com/vpasias/windows_sandbox.git && cd windows_sandbox
 
-vagrant up
+vagrant up dc1
 
 vagrant status
+
+vagrant up cs1 cs2 cs3 ss1
 
 ########################################################################################################################################################################
 #################### Delete ##########################################################################################
