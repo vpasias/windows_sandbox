@@ -77,9 +77,9 @@ Start-Service -Name MSiSCSI
 Set-Service -Name MSiSCSI -StartupType Automatic
 New-IscsiTargetPortal -TargetPortalAddress "192.168.11.13"
 Get-IscsiTarget
-# NodeAddress: iqn.1991-05.com.microsoft:tgt01-iscsitarget01-target
+# NodeAddress: iqn.1991-05.com.microsoft:ss1-iscsitarget01-target
 
-Connect-IscsiTarget -NodeAddress iqn.1991-05.com.microsoft:tgt01-iscsitarget01-target -AuthenticationType ONEWAYCHAP -ChapUsername "username" -ChapSecret "UserP@ssw0rd01" -IsPersistent $True
+Connect-IscsiTarget -NodeAddress iqn.1991-05.com.microsoft:ss1-iscsitarget01-target -AuthenticationType ONEWAYCHAP -ChapUsername "username" -ChapSecret "UserP@ssw0rd01" -IsPersistent $True
 
 Get-IscsiConnection
 
