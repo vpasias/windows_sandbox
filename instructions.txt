@@ -20,9 +20,11 @@ curl -fsSL http://bit.ly/initVagrant | PROVIDER=virtualbox bash
 vagrant -v && vboxmanage -V
 vboxmanage setproperty machinefolder /mnt/extra/libvirt/ && vboxmanage list systemproperties | grep folder
 
-########################################################################################################################################################################
-# Deploying a Windows sandbox using Vagrant and Powershell DSC (https://igorsmolin.ru/en/2020/02/15/deploy-an-automating-windows-sandbox-using-vagrant-and-powershell-dsc-part-1-ad/ ####################
-########################################################################################################################################################################
+##################################################################################################################################################################
+### Deploying a Windows sandbox using Vagrant and Powershell DSC ################################################################################
+### (https://igorsmolin.ru/en/2020/02/15/deploy-an-automating-windows-sandbox-using-vagrant-and-powershell-dsc-part-1-ad/ ########################################
+### (https://github.com/mdcowse/vagrant-sandboxie) ####################################################################################################
+##################################################################################################################################################################
 
 su - iason
 
@@ -114,6 +116,25 @@ New-Cluster -Name Cluster01 -Node "CS1", "CS2", "CS3" -AdministrativeAccessPoint
 #New-Cluster -Name Cluster01 -Node "CS1", "CS2", "CS3" -AdministrativeAccessPoint ActiveDirectoryAndDns -StaticAddress 192.168.11.5
 
 Get-Cluster | Format-List -Property *
+
+# Access the cluster
+ssh Administrator@192.168.11.5
+
+powershell
+Get-ClusterNode
+hostname
+Get-Volume
+
+# Test cluster failover
+Restart-Computer -Force
+exit
+
+ssh Administrator@192.168.11.5
+
+powershell
+Get-ClusterNode
+hostname
+Get-Volume
 
 ########################################################################################################################################################################
 #################### Delete ##########################################################################################
