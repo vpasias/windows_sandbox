@@ -110,6 +110,7 @@ Test-Cluster -Node "CS1", "CS2", "CS3"
 
 New-Cluster -Name Cluster01 -Node "CS1", "CS2", "CS3" -AdministrativeAccessPoint ActiveDirectoryAndDns -StaticAddress 192.168.11.5 -IgnoreNetwork 10.0.2.0/24
 #New-Cluster -Name Cluster01 -Node "CS1", "CS2", "CS3" -AdministrativeAccessPoint ActiveDirectoryAndDns -IgnoreNetwork 10.0.2.0/24
+#New-Cluster -Name Cluster01 -Node "CS1", "CS2", "CS3" -AdministrativeAccessPoint ActiveDirectoryAndDns -StaticAddress 10.0.2.100
 
 ########################################################################################################################################################################
 #################### Delete ##########################################################################################
