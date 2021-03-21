@@ -66,11 +66,7 @@ New-IscsiVirtualDisk -Path "C:\iSCSIDisk\Disk01.vhdx" -SizeBytes 30GB
 Add-IscsiVirtualDiskTargetMapping -TargetName "iSCSITarget01" -Path "C:\iSCSIDisk\Quorum01.vhdx"
 Add-IscsiVirtualDiskTargetMapping -TargetName "iSCSITarget01" -Path "C:\iSCSIDisk\Disk01.vhdx"
 
-Set-IscsiServerTarget `
--TargetName "iSCSITarget01" `
--EnableChap $True `
--Chap (New-Object PSCredential("username", (ConvertTo-SecureString -AsPlainText "UserP@ssw0rd01" -Force)))`
--PassThru
+Set-IscsiServerTarget -TargetName "iSCSITarget01" -EnableChap $True -Chap (New-Object PSCredential("username", (ConvertTo-SecureString -AsPlainText "UserP@ssw0rd01" -Force))) -PassThru
 
 
 
