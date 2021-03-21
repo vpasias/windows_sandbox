@@ -50,11 +50,13 @@ vagrant status
 
 # Change DNS server to: 192.168.11.2 to CS1/CS2/CS3/SS1 and restart each one.
 
+### Install WSFC
 # On CS1/CS2/CS3 PowerShell window
 # https://www.server-world.info/en/note?os=Windows_Server_2019&p=wsfc&f=1
 Install-WindowsFeature Failover-Clustering -IncludeManagementTools
 Restart-Computer -Force
 
+### Configure iSCSI Target - Configure Shared storage
 # On SS1 PowerShell window
 # https://www.server-world.info/en/note?os=Windows_Server_2019&p=wsfc&f=2
 # https://www.server-world.info/en/note?os=Windows_Server_2019&p=iscsi&f=1
@@ -99,6 +101,15 @@ New-Partition -DiskNumber 2 -UseMaximumSize -AssignDriveLetter
 
 Format-Volume -DriveLetter E -FileSystem NTFS -Force
 Format-Volume -DriveLetter F -FileSystem NTFS -Force
+
+### Configure Cluster
+# On CS1 PowerShell window
+# https://www.server-world.info/en/note?os=Windows_Server_2019&p=wsfc&f=4
+
+Test-Cluster -Node "CS1", "CS2", "CS3"
+
+New-Cluster -Name Cluster01 -Node "CS1", "CS2", "CS3" -AdministrativeAccessPoint ActiveDirectoryAndDns -StaticAddress 192.168.11.200
+
 
 ########################################################################################################################################################################
 #################### Delete ##########################################################################################
