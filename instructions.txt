@@ -115,7 +115,7 @@ New-Cluster -Name Cluster01 -Node "CS1", "CS2", "CS3" -AdministrativeAccessPoint
 #New-Cluster -Name Cluster01 -Node "CS1", "CS2", "CS3" -AdministrativeAccessPoint ActiveDirectoryAndDns -IgnoreNetwork 10.0.2.0/24
 #New-Cluster -Name Cluster01 -Node "CS1", "CS2", "CS3" -AdministrativeAccessPoint ActiveDirectoryAndDns -StaticAddress 192.168.11.5
 
-Get-Cluster | Format-List -Property *
+Get-Cluster | Format-List -Property * | more
 
 # Access the cluster
 ssh Administrator@192.168.11.5
