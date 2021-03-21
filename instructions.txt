@@ -68,7 +68,8 @@ Add-IscsiVirtualDiskTargetMapping -TargetName "iSCSITarget01" -Path "C:\iSCSIDis
 
 Set-IscsiServerTarget -TargetName "iSCSITarget01" -EnableChap $True -Chap (New-Object PSCredential("username", (ConvertTo-SecureString -AsPlainText "UserP@ssw0rd01" -Force))) -PassThru
 
-
+Get-IscsiServerTarget -TargetName "iSCSITarget01"
+Restart-Service -Name WinTarget
 
 ########################################################################################################################################################################
 #################### Delete ##########################################################################################
