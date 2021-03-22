@@ -14,7 +14,7 @@ Vagrant.configure("2") do |config|
     end
     subconfig.vm.network "private_network", ip: "192.168.11.2",
 			virtualbox__intnet: true
-    subconfig.vm.network "private_network", auto_config: false, name: "vboxnet0"
+    subconfig.vm.network "private_network", auto_config: false, virtualbox__intnet: "vboxnet0"
     #Set default gateway
     subconfig.vm.provision "shell",
       inline: "New-NetIPAddress -IPAddress 192.168.56.2 -DefaultGateway 192.168.56.1 -PrefixLength 24 -InterfaceAlias 'Ethernet 2'"	  
@@ -48,7 +48,7 @@ Vagrant.configure("2") do |config|
     subconfig.vm.network "private_network", ip: "127.0.0.2", 
 	    auto_config: false,
 	    virtualbox__intnet: true
-    subconfig.vm.network "private_network", auto_config: false, name: "vboxnet0"
+    subconfig.vm.network "private_network", auto_config: false, virtualbox__intnet: "vboxnet0"
     #Set default gateway
     subconfig.vm.provision "shell",
       inline: "New-NetIPAddress -IPAddress 192.168.56.3 -DefaultGateway 192.168.56.1 -PrefixLength 24 -InterfaceAlias 'Ethernet 2'"
@@ -77,7 +77,7 @@ Vagrant.configure("2") do |config|
     subconfig.vm.network "private_network", ip: "127.0.0.2", 
 	    auto_config: false,
 	    virtualbox__intnet: true
-    subconfig.vm.network "private_network", auto_config: false, name: "vboxnet0"
+    subconfig.vm.network "private_network", auto_config: false, virtualbox__intnet: "vboxnet0"
     #Set default gateway
     subconfig.vm.provision "shell",
       inline: "New-NetIPAddress -IPAddress 192.168.56.4 -DefaultGateway 192.168.56.1 -PrefixLength 24 -InterfaceAlias 'Ethernet 2'"
@@ -106,7 +106,7 @@ Vagrant.configure("2") do |config|
     subconfig.vm.network "private_network", ip: "127.0.0.2", 
 	    auto_config: false,
 	    virtualbox__intnet: true
-    subconfig.vm.network "private_network", auto_config: false, name: "vboxnet0"
+    subconfig.vm.network "private_network", auto_config: false, virtualbox__intnet: "vboxnet0""
     #Set default gateway
     subconfig.vm.provision "shell",
       inline: "New-NetIPAddress -IPAddress 192.168.56.5 -DefaultGateway 192.168.56.1 -PrefixLength 24 -InterfaceAlias 'Ethernet 2'"
@@ -135,7 +135,7 @@ Vagrant.configure("2") do |config|
     subconfig.vm.network "private_network", ip: "127.0.0.2", 
 	    auto_config: false,
 	    virtualbox__intnet: true
-    subconfig.vm.network "private_network", auto_config: false, name: "vboxnet0"
+    subconfig.vm.network "private_network", auto_config: false, virtualbox__intnet: "vboxnet0"
     #Set default gateway
     subconfig.vm.provision "shell",
       inline: "New-NetIPAddress -IPAddress 192.168.56.6 -DefaultGateway 192.168.56.1 -PrefixLength 24 -InterfaceAlias 'Ethernet 2'"
