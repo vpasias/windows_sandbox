@@ -12,7 +12,7 @@ Vagrant.configure("2") do |config|
       vb.customize ['modifyvm', :id, '--nested-hw-virt', 'on']
       vb.customize ['modifyvm', :id, '--nicpromisc2', 'allow-all']
     end
-    subconfig.vm.network "hostonly", ip: "192.168.33.2"
+    subconfig.vm.network "private_network", ip: "192.168.33.2", name: "vboxnet0"
     subconfig.vm.network "private_network", ip: "192.168.11.2", 
       virtualbox__intnet: true
     subconfig.winrm.username = "vagrant"
@@ -42,7 +42,7 @@ Vagrant.configure("2") do |config|
       vb.customize ['modifyvm', :id, '--nested-hw-virt', 'on']
       vb.customize ['modifyvm', :id, '--nicpromisc2', 'allow-all']
     end
-    subconfig.vm.network "hostonly", ip: "192.168.33.3"
+    subconfig.vm.network "private_network", ip: "192.168.33.3", name: "vboxnet0"
     subconfig.vm.network "private_network", ip: "127.0.0.2", 
       auto_config: false,
       virtualbox__intnet: true
@@ -68,7 +68,7 @@ Vagrant.configure("2") do |config|
       vb.customize ['modifyvm', :id, '--nested-hw-virt', 'on']
       vb.customize ['modifyvm', :id, '--nicpromisc2', 'allow-all']
     end
-    subconfig.vm.network "hostonly", ip: "192.168.33.4"
+    subconfig.vm.network "private_network", ip: "192.168.33.4", name: "vboxnet0"
     subconfig.vm.network "private_network", ip: "127.0.0.2", 
       auto_config: false,
       virtualbox__intnet: true
@@ -94,7 +94,7 @@ Vagrant.configure("2") do |config|
       vb.customize ['modifyvm', :id, '--nested-hw-virt', 'on']
       vb.customize ['modifyvm', :id, '--nicpromisc2', 'allow-all']
     end
-    subconfig.vm.network "hostonly", ip: "192.168.33.5"
+    subconfig.vm.network "private_network", ip: "192.168.33.5", name: "vboxnet0"
     subconfig.vm.network "private_network", ip: "127.0.0.2", 
       auto_config: false,
       virtualbox__intnet: true
@@ -120,7 +120,7 @@ Vagrant.configure("2") do |config|
       vb.customize ['modifyvm', :id, '--nested-hw-virt', 'on']
       vb.customize ['modifyvm', :id, '--nicpromisc2', 'allow-all']
     end
-    subconfig.vm.network "hostonly", ip: "192.168.33.6"
+    subconfig.vm.network "private_network", ip: "192.168.33.6", name: "vboxnet0"
     subconfig.vm.network "private_network", ip: "127.0.0.2", 
       auto_config: false,
       virtualbox__intnet: true
