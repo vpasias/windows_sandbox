@@ -17,7 +17,7 @@ Vagrant.configure("2") do |config|
     subconfig.vm.network "private_network", auto_config: false, name: "vboxnet0"
     #Set default gateway
     subconfig.vm.provision "shell",
-      inline: "New-NetIPAddress -IPAddress 192.168.33.2 -DefaultGateway 192.168.33.1 -PrefixLength 24 -InterfaceAlias 'Ethernet 2'"	  
+      inline: "New-NetIPAddress -IPAddress 192.168.56.2 -DefaultGateway 192.168.56.1 -PrefixLength 24 -InterfaceAlias 'Ethernet 2'"	  
     subconfig.winrm.username = "vagrant"
     subconfig.winrm.password = "vagrant"
     subconfig.winrm.transport = :plaintext
@@ -51,7 +51,7 @@ Vagrant.configure("2") do |config|
     subconfig.vm.network "private_network", auto_config: false, name: "vboxnet0"
     #Set default gateway
     subconfig.vm.provision "shell",
-      inline: "New-NetIPAddress -IPAddress 192.168.33.3 -DefaultGateway 192.168.33.1 -PrefixLength 24 -InterfaceAlias 'Ethernet 2'"
+      inline: "New-NetIPAddress -IPAddress 192.168.56.3 -DefaultGateway 192.168.56.1 -PrefixLength 24 -InterfaceAlias 'Ethernet 2'"
     subconfig.winrm.username = "vagrant"
     subconfig.winrm.password = "vagrant"
     subconfig.winrm.transport = :plaintext
@@ -80,7 +80,7 @@ Vagrant.configure("2") do |config|
     subconfig.vm.network "private_network", auto_config: false, name: "vboxnet0"
     #Set default gateway
     subconfig.vm.provision "shell",
-      inline: "New-NetIPAddress -IPAddress 192.168.33.4 -DefaultGateway 192.168.33.1 -PrefixLength 24 -InterfaceAlias 'Ethernet 2'"
+      inline: "New-NetIPAddress -IPAddress 192.168.56.4 -DefaultGateway 192.168.56.1 -PrefixLength 24 -InterfaceAlias 'Ethernet 2'"
     subconfig.winrm.username = "vagrant"
     subconfig.winrm.password = "vagrant"
     subconfig.winrm.transport = :plaintext
@@ -109,7 +109,7 @@ Vagrant.configure("2") do |config|
     subconfig.vm.network "private_network", auto_config: false, name: "vboxnet0"
     #Set default gateway
     subconfig.vm.provision "shell",
-      inline: "New-NetIPAddress -IPAddress 192.168.33.5 -DefaultGateway 192.168.33.1 -PrefixLength 24 -InterfaceAlias 'Ethernet 2'"
+      inline: "New-NetIPAddress -IPAddress 192.168.56.5 -DefaultGateway 192.168.56.1 -PrefixLength 24 -InterfaceAlias 'Ethernet 2'"
     subconfig.winrm.username = "vagrant"
     subconfig.winrm.password = "vagrant"
     subconfig.winrm.transport = :plaintext
@@ -138,7 +138,7 @@ Vagrant.configure("2") do |config|
     subconfig.vm.network "private_network", auto_config: false, name: "vboxnet0"
     #Set default gateway
     subconfig.vm.provision "shell",
-      inline: "New-NetIPAddress -IPAddress 192.168.33.6 -DefaultGateway 192.168.33.1 -PrefixLength 24 -InterfaceAlias 'Ethernet 2'"
+      inline: "New-NetIPAddress -IPAddress 192.168.56.6 -DefaultGateway 192.168.56.1 -PrefixLength 24 -InterfaceAlias 'Ethernet 2'"
     subconfig.winrm.username = "vagrant"
     subconfig.winrm.password = "vagrant"
     subconfig.winrm.transport = :plaintext
