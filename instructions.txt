@@ -20,7 +20,7 @@ curl -fsSL http://bit.ly/initVagrant | PROVIDER=virtualbox bash
 vagrant -v && vboxmanage -V
 vboxmanage setproperty machinefolder /mnt/extra/libvirt/ && vboxmanage list systemproperties | grep folder && VBoxManage list hostonlyifs
 
-VBoxManage hostonlyif remove "VirtualBox Host-Only Ethernet Adapter" && VBoxManage hostonlyif create
+VBoxManage hostonlyif create
 
 VBoxManage hostonlyif ipconfig 'vboxnet0' --ip 192.168.33.1 --netmask 255.255.255.0 && VBoxManage list hostonlyifs
 
