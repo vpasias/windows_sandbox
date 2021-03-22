@@ -12,12 +12,11 @@ Vagrant.configure("2") do |config|
       vb.customize ['modifyvm', :id, '--nested-hw-virt', 'on']
       vb.customize ['modifyvm', :id, '--nicpromisc2', 'allow-all']
     end
-    subconfig.vm.network "private_network", ip: "192.168.11.2",
+    subconfig.vm.network "private_network", auto_config: false,
 			virtualbox__intnet: true
-    subconfig.vm.network "private_network", auto_config: false, virtualbox__intnet: "vboxnet0"
     #Set default gateway
     subconfig.vm.provision "shell",
-      inline: "New-NetIPAddress -IPAddress 192.168.56.2 -DefaultGateway 192.168.56.1 -PrefixLength 24 -InterfaceAlias 'Ethernet 2'"	  
+      inline: "New-NetIPAddress -IPAddress 192.168.11.2 -DefaultGateway 192.168.11.1 -PrefixLength 24 -InterfaceAlias 'Ethernet 2'"	  
     subconfig.winrm.username = "vagrant"
     subconfig.winrm.password = "vagrant"
     subconfig.winrm.transport = :plaintext
@@ -45,13 +44,11 @@ Vagrant.configure("2") do |config|
       vb.customize ['modifyvm', :id, '--nested-hw-virt', 'on']
       vb.customize ['modifyvm', :id, '--nicpromisc2', 'allow-all']
     end
-    subconfig.vm.network "private_network", ip: "127.0.0.2", 
-	    auto_config: false,
-	    virtualbox__intnet: true
-    subconfig.vm.network "private_network", auto_config: false, virtualbox__intnet: "vboxnet0"
+    subconfig.vm.network "private_network", auto_config: false,
+			virtualbox__intnet: true
     #Set default gateway
     subconfig.vm.provision "shell",
-      inline: "New-NetIPAddress -IPAddress 192.168.56.3 -DefaultGateway 192.168.56.1 -PrefixLength 24 -InterfaceAlias 'Ethernet 2'"
+      inline: "New-NetIPAddress -IPAddress 192.168.11.10 -DefaultGateway 192.168.11.1 -PrefixLength 24 -InterfaceAlias 'Ethernet 2'"
     subconfig.winrm.username = "vagrant"
     subconfig.winrm.password = "vagrant"
     subconfig.winrm.transport = :plaintext
@@ -74,13 +71,11 @@ Vagrant.configure("2") do |config|
       vb.customize ['modifyvm', :id, '--nested-hw-virt', 'on']
       vb.customize ['modifyvm', :id, '--nicpromisc2', 'allow-all']
     end
-    subconfig.vm.network "private_network", ip: "127.0.0.2", 
-	    auto_config: false,
-	    virtualbox__intnet: true
-    subconfig.vm.network "private_network", auto_config: false, virtualbox__intnet: "vboxnet0"
+    subconfig.vm.network "private_network", auto_config: false,
+			virtualbox__intnet: true
     #Set default gateway
     subconfig.vm.provision "shell",
-      inline: "New-NetIPAddress -IPAddress 192.168.56.4 -DefaultGateway 192.168.56.1 -PrefixLength 24 -InterfaceAlias 'Ethernet 2'"
+      inline: "New-NetIPAddress -IPAddress 192.168.11.11 -DefaultGateway 192.168.11.1 -PrefixLength 24 -InterfaceAlias 'Ethernet 2'"
     subconfig.winrm.username = "vagrant"
     subconfig.winrm.password = "vagrant"
     subconfig.winrm.transport = :plaintext
@@ -103,13 +98,11 @@ Vagrant.configure("2") do |config|
       vb.customize ['modifyvm', :id, '--nested-hw-virt', 'on']
       vb.customize ['modifyvm', :id, '--nicpromisc2', 'allow-all']
     end
-    subconfig.vm.network "private_network", ip: "127.0.0.2", 
-	    auto_config: false,
-	    virtualbox__intnet: true
-    subconfig.vm.network "private_network", auto_config: false, virtualbox__intnet: "vboxnet0"
+    subconfig.vm.network "private_network", auto_config: false,
+			virtualbox__intnet: true
     #Set default gateway
     subconfig.vm.provision "shell",
-      inline: "New-NetIPAddress -IPAddress 192.168.56.5 -DefaultGateway 192.168.56.1 -PrefixLength 24 -InterfaceAlias 'Ethernet 2'"
+      inline: "New-NetIPAddress -IPAddress 192.168.11.12 -DefaultGateway 192.168.11.1 -PrefixLength 24 -InterfaceAlias 'Ethernet 2'"
     subconfig.winrm.username = "vagrant"
     subconfig.winrm.password = "vagrant"
     subconfig.winrm.transport = :plaintext
@@ -132,13 +125,11 @@ Vagrant.configure("2") do |config|
       vb.customize ['modifyvm', :id, '--nested-hw-virt', 'on']
       vb.customize ['modifyvm', :id, '--nicpromisc2', 'allow-all']
     end
-    subconfig.vm.network "private_network", ip: "127.0.0.2", 
-	    auto_config: false,
-	    virtualbox__intnet: true
-    subconfig.vm.network "private_network", auto_config: false, virtualbox__intnet: "vboxnet0"
+    subconfig.vm.network "private_network", auto_config: false,
+			virtualbox__intnet: true
     #Set default gateway
     subconfig.vm.provision "shell",
-      inline: "New-NetIPAddress -IPAddress 192.168.56.6 -DefaultGateway 192.168.56.1 -PrefixLength 24 -InterfaceAlias 'Ethernet 2'"
+      inline: "New-NetIPAddress -IPAddress 192.168.11.13 -DefaultGateway 192.168.11.1 -PrefixLength 24 -InterfaceAlias 'Ethernet 2'"
     subconfig.winrm.username = "vagrant"
     subconfig.winrm.password = "vagrant"
     subconfig.winrm.transport = :plaintext
