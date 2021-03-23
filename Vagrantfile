@@ -13,7 +13,7 @@ Vagrant.configure("2") do |config|
       vb.customize ['modifyvm', :id, '--nicpromisc2', 'allow-all']
     end
     subconfig.vm.network "private_network", ip: "192.168.11.2", 
-      name: "vboxnet5", :adapter => 2
+      name: "vboxnet0", :adapter => 2
 #	    virtualbox__intnet: true  
     subconfig.winrm.username = "vagrant"
     subconfig.winrm.password = "vagrant"
@@ -43,7 +43,7 @@ Vagrant.configure("2") do |config|
       vb.customize ['modifyvm', :id, '--nicpromisc2', 'allow-all']
     end
     subconfig.vm.network "private_network", ip: "192.168.11.10", 
-      name: "vboxnet5", :adapter => 2
+      name: "vboxnet0", :adapter => 2
 #	    virtualbox__intnet: true  
     subconfig.winrm.username = "vagrant"
     subconfig.winrm.password = "vagrant"
@@ -68,7 +68,7 @@ Vagrant.configure("2") do |config|
       vb.customize ['modifyvm', :id, '--nicpromisc2', 'allow-all']
     end
     subconfig.vm.network "private_network", ip: "192.168.11.11", 
-      name: "vboxnet5", :adapter => 2
+      name: "vboxnet0", :adapter => 2
 #	    virtualbox__intnet: true  
     subconfig.winrm.username = "vagrant"
     subconfig.winrm.password = "vagrant"
@@ -93,7 +93,7 @@ Vagrant.configure("2") do |config|
       vb.customize ['modifyvm', :id, '--nicpromisc2', 'allow-all']
     end
     subconfig.vm.network "private_network", ip: "192.168.11.12", 
-      name: "vboxnet5", :adapter => 2
+      name: "vboxnet0", :adapter => 2
 #	    virtualbox__intnet: true  
     subconfig.winrm.username = "vagrant"
     subconfig.winrm.password = "vagrant"
@@ -118,7 +118,7 @@ Vagrant.configure("2") do |config|
       vb.customize ['modifyvm', :id, '--nicpromisc2', 'allow-all']
     end
     subconfig.vm.network "private_network", ip: "192.168.11.13", 
-      name: "vboxnet5", :adapter => 2
+      name: "vboxnet0", :adapter => 2
 #	    virtualbox__intnet: true  
     subconfig.winrm.username = "vagrant"
     subconfig.winrm.password = "vagrant"
