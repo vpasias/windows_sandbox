@@ -32,7 +32,7 @@ Vagrant.configure("2") do |config|
       path: "provision/DSCInstallDHCP.ps1"
     subconfig.vm.provision "shell",
       run: "always",
-      inline: "route add 0.0.0.0 mask 0.0.0.0 192.168.11.1"
+      inline: "route /p add 0.0.0.0 mask 0.0.0.0 192.168.11.1"
   end
     
   config.vm.define "cs1" do |subconfig|
@@ -54,7 +54,7 @@ Vagrant.configure("2") do |config|
     subconfig.winrm.basic_auth_only = true
     subconfig.vm.provision "shell",
       run: "always",
-      inline: "route add 0.0.0.0 mask 0.0.0.0 192.168.11.1"
+      inline: "route /p add 0.0.0.0 mask 0.0.0.0 192.168.11.1"
     subconfig.vm.provision "shell",
       path: "provision/ConfigureRebootOnNode.ps1"    
     subconfig.vm.provision "shell",
@@ -82,7 +82,7 @@ Vagrant.configure("2") do |config|
     subconfig.winrm.basic_auth_only = true
     subconfig.vm.provision "shell",
       run: "always",
-      inline: "route add 0.0.0.0 mask 0.0.0.0 192.168.11.1"
+      inline: "route /p add 0.0.0.0 mask 0.0.0.0 192.168.11.1"
     subconfig.vm.provision "shell",
       path: "provision/ConfigureRebootOnNode.ps1"    
     subconfig.vm.provision "shell",
@@ -110,7 +110,7 @@ Vagrant.configure("2") do |config|
     subconfig.winrm.basic_auth_only = true
     subconfig.vm.provision "shell",
       run: "always",
-      inline: "route add 0.0.0.0 mask 0.0.0.0 192.168.11.1"
+      inline: "route /p add 0.0.0.0 mask 0.0.0.0 192.168.11.1"
     subconfig.vm.provision "shell",
       path: "provision/ConfigureRebootOnNode.ps1"    
     subconfig.vm.provision "shell",
@@ -138,7 +138,7 @@ Vagrant.configure("2") do |config|
     subconfig.winrm.basic_auth_only = true
     subconfig.vm.provision "shell",
       run: "always",
-      inline: "route add 0.0.0.0 mask 0.0.0.0 192.168.11.1"
+      inline: "route /p add 0.0.0.0 mask 0.0.0.0 192.168.11.1"
     subconfig.vm.provision "shell",
       path: "provision/ConfigureRebootOnNode.ps1"    
     subconfig.vm.provision "shell",
