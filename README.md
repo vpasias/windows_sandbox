@@ -1,1 +1,1 @@
-Windows Server 2019 cluster sandbox with Vagrant
+Windows Server 2019 cluster sandbox with Vagrant and Powershell
