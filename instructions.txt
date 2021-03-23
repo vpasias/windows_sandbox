@@ -34,7 +34,7 @@ su - iason
 
 sudo adduser `id -un` vboxusers
 
-git clone https://github.com/vpasias/windows_sandbox.git && cd windows_sandbox
+git clone https://github.com/vpasias/windows_sandbox-ps_dsc.git && cd windows_sandbox-ps_dsc
 
 vagrant up
 
