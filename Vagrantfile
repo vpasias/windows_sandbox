@@ -30,6 +30,9 @@ Vagrant.configure("2") do |config|
     #https://github.com/dsccommunity/xDhcpServer
     subconfig.vm.provision "shell",
       path: "provision/DSCInstallDHCP.ps1"
+    subconfig.vm.provision "shell",
+      run: "always",
+      inline: "route add 0.0.0.0 mask 0.0.0.0 192.168.11.1"
   end
     
   config.vm.define "cs1" do |subconfig|
@@ -55,6 +58,9 @@ Vagrant.configure("2") do |config|
       path: "provision/PreDSCInstall.ps1"
     subconfig.vm.provision "shell",
       path: "provision/DSCJoinDomain.ps1"
+    subconfig.vm.provision "shell",
+      run: "always",
+      inline: "route add 0.0.0.0 mask 0.0.0.0 192.168.11.1"
   end
   
   config.vm.define "cs2" do |subconfig|
@@ -80,6 +86,9 @@ Vagrant.configure("2") do |config|
       path: "provision/PreDSCInstall.ps1"
     subconfig.vm.provision "shell",
       path: "provision/DSCJoinDomain.ps1"
+    subconfig.vm.provision "shell",
+      run: "always",
+      inline: "route add 0.0.0.0 mask 0.0.0.0 192.168.11.1"
   end
   
   config.vm.define "cs3" do |subconfig|
@@ -105,6 +114,9 @@ Vagrant.configure("2") do |config|
       path: "provision/PreDSCInstall.ps1"
     subconfig.vm.provision "shell",
       path: "provision/DSCJoinDomain.ps1"
+    subconfig.vm.provision "shell",
+      run: "always",
+      inline: "route add 0.0.0.0 mask 0.0.0.0 192.168.11.1"
   end
 
   config.vm.define "ss1" do |subconfig|
@@ -130,5 +142,8 @@ Vagrant.configure("2") do |config|
       path: "provision/PreDSCInstall.ps1"
     subconfig.vm.provision "shell",
       path: "provision/DSCJoinDomain.ps1"
+    subconfig.vm.provision "shell",
+      run: "always",
+      inline: "route add 0.0.0.0 mask 0.0.0.0 192.168.11.1"
   end
 end
