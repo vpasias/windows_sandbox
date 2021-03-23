@@ -114,11 +114,6 @@ Format-Volume -DriveLetter F -FileSystem NTFS -Force
 # Remove Default Gateway: 10.0.2.2 - Add Default Gateway: 192.168.11.2
 route add 0.0.0.0 mask 0.0.0.0 192.168.11.1
 
-  config.vm.provision "shell",
-    run: "always",
-    inline: "# Remove Default Gateway: 10.0.2.2 - Add Default Gateway: 192.168.11.2
-"
-
 Test-Cluster -Node "CS1", "CS2", "CS3"
 
 New-Cluster -Name Cluster01 -Node "CS1", "CS2", "CS3" -AdministrativeAccessPoint ActiveDirectoryAndDns -StaticAddress 192.168.11.5 -IgnoreNetwork 10.0.2.0/24
