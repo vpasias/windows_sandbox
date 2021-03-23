@@ -55,6 +55,7 @@ vagrant up
 vagrant status
 
 # To join Active Directory: Change DNS server to: 192.168.11.2 to CS1/CS2/CS3/SS1 and restart each one.
+# shutdown /r
 # Add Default Gateway: 192.168.11.2
 # route add 0.0.0.0 mask 0.0.0.0 192.168.11.1
 
