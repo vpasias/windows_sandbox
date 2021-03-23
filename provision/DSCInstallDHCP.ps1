@@ -31,7 +31,7 @@ Configuration xDhcpsServerScope_NewScope
             ScopeID = '192.168.11.0'
             Ensure = 'Present'
             IPEndRange = '192.168.11.254'
-            IPStartRange = '192.168.11.10'
+            IPStartRange = '192.168.11.30'
             Name = '11.0/24'
             SubnetMask = '255.255.255.0'
             LeaseDuration = ((New-TimeSpan -Hours 8 ).ToString())
