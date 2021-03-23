@@ -20,9 +20,9 @@ curl -fsSL http://bit.ly/initVagrant | PROVIDER=virtualbox bash
 vagrant -v && vboxmanage -V
 vboxmanage setproperty machinefolder /mnt/extra/libvirt/ && vboxmanage list systemproperties | grep folder && VBoxManage list hostonlyifs
 
-#VBoxManage hostonlyif remove vboxnet5
+#VBoxManage hostonlyif remove vboxnet0
 #VBoxManage hostonlyif create
-#VBoxManage hostonlyif ipconfig "vboxnet5" --ip 192.168.11.1 --netmask 255.255.255.0 && VBoxManage list hostonlyifs
+#VBoxManage hostonlyif ipconfig "vboxnet0" --ip 192.168.11.1 --netmask 255.255.255.0 && VBoxManage list hostonlyifs
 
 ##################################################################################################################################################################
 ### Deploying a Windows sandbox using Vagrant and Powershell DSC ################################################################################
