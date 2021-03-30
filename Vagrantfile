@@ -14,7 +14,8 @@ Vagrant.configure("2") do |config|
     end
     subconfig.vm.network "private_network", ip: "192.168.11.2", 
       name: "vboxnet0", :adapter => 2
-#	    virtualbox__intnet: true  
+    #	    virtualbox__intnet: true  
+    subconfig.vm.network "forwarded_port", guest: 33389, host: 9011
     subconfig.winrm.username = "vagrant"
     subconfig.winrm.password = "vagrant"
     subconfig.winrm.transport = :plaintext
@@ -47,7 +48,7 @@ Vagrant.configure("2") do |config|
     end
     subconfig.vm.network "private_network", ip: "192.168.11.10", 
       name: "vboxnet0", :adapter => 2
-#	    virtualbox__intnet: true  
+    subconfig.vm.network "forwarded_port", guest: 33389, host: 9012
     subconfig.winrm.username = "vagrant"
     subconfig.winrm.password = "vagrant"
     subconfig.winrm.transport = :plaintext
@@ -75,7 +76,7 @@ Vagrant.configure("2") do |config|
     end
     subconfig.vm.network "private_network", ip: "192.168.11.11", 
       name: "vboxnet0", :adapter => 2
-#	    virtualbox__intnet: true  
+    subconfig.vm.network "forwarded_port", guest: 33389, host: 9013 
     subconfig.winrm.username = "vagrant"
     subconfig.winrm.password = "vagrant"
     subconfig.winrm.transport = :plaintext
@@ -103,7 +104,7 @@ Vagrant.configure("2") do |config|
     end
     subconfig.vm.network "private_network", ip: "192.168.11.12", 
       name: "vboxnet0", :adapter => 2
-#	    virtualbox__intnet: true  
+    subconfig.vm.network "forwarded_port", guest: 33389, host: 9014
     subconfig.winrm.username = "vagrant"
     subconfig.winrm.password = "vagrant"
     subconfig.winrm.transport = :plaintext
@@ -131,7 +132,7 @@ Vagrant.configure("2") do |config|
     end
     subconfig.vm.network "private_network", ip: "192.168.11.13", 
       name: "vboxnet0", :adapter => 2
-#	    virtualbox__intnet: true  
+    subconfig.vm.network "forwarded_port", guest: 33389, host: 9015
     subconfig.winrm.username = "vagrant"
     subconfig.winrm.password = "vagrant"
     subconfig.winrm.transport = :plaintext
